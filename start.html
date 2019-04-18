@@ -19,19 +19,23 @@
 <div id="map"></div>
 <script>
 	var map;
-	var parks = [
-		{"park":"Yellowstone","coords":[44.4280,-110.5885]},
-		{"park":"Glacier","coords":[48.7596, -113.7870]}
+	var flavioNoe = [
+		{"flavioNoe":"Home - Where I live now","coords":[43.762666,-79.409708]},
+        {"flavioNoe":"Perfect Vacations 1","coords":[21.103000, -86.764766]},
+        {"flavioNoe":"Perfect Vacations 2","coords":[28.540195, -81.387224]},
+        {"flavioNoe":"Where I have lived","coords":[-15.685347, -47.993687]},
+        {"flavioNoe":"Where I born","coords":[-23.914598, -50.085027]},
+        {"flavioNoe":"Next Vacations","coords":[37.755295, -122.469935]}
 		];
 
 	function initMap() {
 		map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 4,
-			center: new google.maps.LatLng(44, -110),
+			zoom: 3.2,
+			center: new google.maps.LatLng(17, -79.4),
 			mapTypeId: 'terrain'
 		});
 
-		mashParks(parks);
+		mashParks(flavioNoe);
 	}
 
 	function mashParks(results) {
@@ -41,7 +45,7 @@
 		var marker = new google.maps.Marker({
 			position: latLng,
 			map: map,
-			label:results[i].park
+			label:results[i].flavioNoe
 			});
 		}
 	}
